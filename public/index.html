@@ -1,0 +1,378 @@
+<html>
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/moduli_copiati/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css"> -->
+    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <!-- jQuery -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+        
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="moduli_copiati/jquery/dist/jquery.slim.min.js"></script>
+    <script src="moduli_copiati/popper.js/dist/umd/popper.min.js"></script>
+    <script src="moduli_copiati/bootstrap/dist/js/bootstrap.min.js"></script>  
+    
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title> index.html </title>
+</head>
+
+    <body onload=autoExec()>
+        <div class="container">
+            <div class="row row-content">
+                <div class="col-md-4">    <!-- lato SX (border border-secondary rounded) -->
+                    <div class="form-group row">  
+                        <form>
+                            <select class="form-control" id="DdCartelle">
+                                <option value = "Tutte" selected>Tutte</option>
+                            </select>
+                        </form>  
+                    </div>    
+                    <div id="ElencoJob" rep_dir="xDIRx">   
+                        <!-- link ai job creati dinamicamente nella listJobs:                                   -->
+                        <!-- <div class="row">                                                                  -->
+                        <!-- <a href="#" rep_dir="xDIRx" onclick="axiosGetId(\'xIDx\')">xNOMEx</a>              -->
+                        <!-- </div>                                                                             -->
+                    </div>                   
+                </div>               
+                <div class="col-md-8">    <!-- lato DX-->
+                    <h4 id=job_des>nome procedura</h4>
+                    <form action="">
+                        <!-- Campi di Input -->
+                        <div class="form-group row">
+                            <label for="job_dir" class="col-md-2 col-form-label">Directory</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="job_dir" placeholder="rep_dir">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="job_name" class="col-md-2 col-form-label">Job / Trans</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="job_name" placeholder="rep_obj">
+                            </div>
+                        </div>
+                        <!-- Parametri -->
+                        <div class="gruppo-parametri form-group row" id="PP0" name="PPall" style="display:none">
+                                <label for="P0" class="col-md-2 col-form-label">parametro 0</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="P0" placeholder="____">
+                                </div>
+                        </div>
+                        <div class="gruppo-parametri form-group row" id="PP1" name="PPall" style="display:none">
+                            <label for="P1" class="col-md-2 col-form-label">parametro 1</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P1" placeholder="____">
+                            </div>
+                        </div> 
+                        <div class="gruppo-parametri form-group row" id="PP2" name="PPall" style="display:none">
+                            <label for="P2" class="col-md-2 col-form-label">parametro 2</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P2" placeholder="____">
+                            </div>
+                        </div>  
+
+                        <div class="gruppo-parametri form-group row" id="PP3" name="PPall" style="display:none">
+                            <label for="P3" class="col-md-2 col-form-label">parametro 3</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P3" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP4" name="PPall" style="display:none">
+                            <label for="P4" class="col-md-2 col-form-label">parametro 4</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P4" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP5" name="PPall" style="display:none">
+                            <label for="P5" class="col-md-2 col-form-label">parametro 5</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P5" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP6" name="PPall" style="display:none">
+                            <label for="P6" class="col-md-2 col-form-label">parametro 6</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P6" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP7" name="PPall" style="display:none">
+                            <label for="P7" class="col-md-2 col-form-label">parametro 7</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P7" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP8" name="PPall" style="display:none">
+                            <label for="P8" class="col-md-2 col-form-label">parametro 8</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P8" placeholder="____">
+                            </div>
+                        </div>  
+                        <div class="gruppo-parametri form-group row" id="PP9" name="PPall" style="display:none">
+                            <label for="P9" class="col-md-2 col-form-label">parametro 9</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="P9" placeholder="____">
+                            </div>
+                        </div>  
+
+                        <!-- Bottoni -->
+                        <div class="form-group row">
+                            <div class="offset-md-2 col-md-4">
+                                <button class="btn btn-primary" type="button" onclick="buttonRun()">Run</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-dark btn-sm" type="button" onclick="test()">Test</button>
+                            </div>
+                            <div class="col-md-2">
+                                    <button class="btn btn-basic btn-sm" type="button" onclick="axiosGet()">axiosGet()</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-warning btn-sm" type="button" onclick="toggleEle()">Togg</button>
+                            </div>
+                        </div>
+                    </form>                    
+                    <div class="form-group">
+                        <label for="err">Err</label>
+                        <textarea id="err" style = "font-family:arial; color:rgb(255, 0, 0);" class="form-control" rows="1"> </textarea>
+                        <label for="log">Log</label>
+                        <textarea id="log" style = "font-family:arial; color:rgb(0, 0, 255);" class="form-control" rows="10"> </textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    
+    <script>
+     var currentJob = {};
+     var allJobs = [];
+
+     function autoExec() {
+         axiosGet((errore, array_di_json)=> {
+            var cartelle_all;
+
+            allJobs = array_di_json;
+            listJobs(allJobs);
+
+            cartelle_all = array_di_json.map((elemento)=> {
+                return elemento.rep_dir;
+            });
+            // ES6  Set object e Spread operator
+            cartelle_distinct = [...new Set(cartelle_all)];
+
+            var ele = $("#DdCartelle"); 
+            var new_opt;   
+            const opt = '<option value = "xNOMEx">xNOMEx</option>';
+
+            for (var j in cartelle_distinct){               
+                new_opt = opt.replace(/xNOMEx/g, cartelle_distinct[j]);
+                // console.log(new_opt);
+                ele.append(new_opt);
+            };
+
+         });
+        
+        
+     }
+
+    // TEST _________________________________________________________________________________________________________
+    function test() {
+        axios.get('/dishes')
+        .then(function(response) {
+            console.log(response.data);
+            array_di_json = response.data;
+            array_di_valori = array_di_json.map((elemento)=> {
+                return elemento.rep_dir;
+            });
+            console.log('array_divalori');
+            console.log(array_di_valori);
+            console.log('new Set(array_di_valori)');
+            console.log(new Set(array_di_valori));
+            // ES5
+            // array_distinct = array_di_valori.filter((elemento,indice,tutti)=> {
+            //     return tutti.indexOf(elemento) === indice;
+            // });
+            // ES6
+            // Set object e Spread operator
+            array_distinct = [...new Set(array_di_valori)];
+
+            // array_distinct.unshift('Tutte');
+            $("#log").val(array_distinct);
+
+            
+            var ele = $("#DdCartelle"); 
+            var new_opt;   
+            const opt = '<option value = "xNOMEx">xNOMEx</option>';
+
+            for (var j in array_distinct){
+                
+                console.log(array_distinct[j]);                
+                new_opt = opt.replace(/xNOMEx/g, array_distinct[j]);
+                console.log(new_opt);
+                ele.append(new_opt);
+            };
+            
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+    }
+    
+    function toggleEle() {
+        $(".gruppo-parametri").toggle();
+    };
+
+    
+    // ________________________________________________________________________________________________________________
+
+    // Cambio Cartella
+    $("#DdCartelle").change(()=> {
+        let cartellaScelta = $("#DdCartelle option:selected").val();
+        console.log('selezionato ' +  cartellaScelta);
+
+        $('#ElencoJob').children().each(function (index) {
+            // console.log('Index: ' + index + ', html: ' + $(this).html() + ', rep_dir:' + $(this).attr('rep_dir'));
+            if (cartellaScelta=='Tutte')
+                $(this).show();
+            else if ($(this).attr('rep_dir')==cartellaScelta)
+                $(this).show();
+            else
+                $(this).hide();
+        });
+    });
+
+    // Get
+    function axiosGet(callback) {
+        const Url='/dishes';
+        // const Url='http://kettle:3000/dishes';
+        console.log("log funzione axiosGet:" + Url)
+        // make request to our API
+        axios.get(Url)
+        .then(function(response) {
+            // console.log(response.data);
+            callback(null,response.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+        
+    }
+    function listJobs(jobArray){
+        var ele = $("#ElencoJob"); 
+        var new_div;   
+        const link = '<a href="#" onclick="axiosGetId(\'xIDx\')">xNOMEx</a>';
+        const div = '<div class="row" rep_dir="xDIRx">' + link + '</div>';
+
+        for (var j in jobArray){
+            // console.log(j);
+            console.log(jobArray[j].id + ': ' + jobArray[j].name + ' in ' + jobArray[j].rep_dir);
+            
+            new_div = div.replace("xIDx", jobArray[j].id);
+            new_div = new_div.replace("xNOMEx", jobArray[j].name);
+            new_div = new_div.replace("xDIRx", jobArray[j].rep_dir);
+            ele.append(new_div);
+        }
+    }
+    // Get Id
+    function axiosGetId(id) {
+        const base='/dishes/';
+        let Url=base+id;
+        
+        console.log("log funzione axiosGetId:" + Url);
+        $("#log").val(null);
+        $("#err").val(null); 
+
+        // make request to our API
+        axios.get(Url)
+        .then(function(response) {
+            console.log('axios.get.then');
+            console.log('Status: ' + response.statusText + ' ('+response.statusText+')');
+            console.log(response.data); 
+            $(".gruppo-parametri").hide();
+            currentJob = response.data;         
+            $("#job_des").text(currentJob.name);
+            $("#job_dir").val(currentJob.rep_dir);
+            $("#job_name").val(currentJob.rep_obj);
+            formParametri(currentJob);
+            // oggetto job nel Log
+            $("#log").val(JSON.stringify(currentJob).replace(/,/g,",\n").replace(/{/g,"{\n").replace(/}/g,"\n}"));
+        })
+        .catch(function(error) {
+            console.log('axios.get.catch');
+            console.log(error.message);
+            $("#log").val(error.message);            
+        })
+        
+    }
+    // Visualizza i campi variabili del form per l'inserimento dei parametri
+    function formParametri(job) {
+        var j=0;
+        var ele, label; 
+        if (job.pdi_par) {
+            for (var k in job.pdi_par) {
+                ele = $("#P"+j);
+                grp = $("#PP"+j);
+                label =  $("label[for='P" + j + "']")
+                ele.val(job.pdi_par[k]);
+                label.text(k);
+                j++;
+                grp.show();
+            };
+        }
+    }
+    // bottone RUN
+    function buttonRun() {
+        console.log('buttonRun()');
+        $("#log").val(null); 
+        $("#err").val(null); 
+
+        let cj = currentJob;
+        setParametri(cj);
+        axiosPost(cj);        
+    }
+    //Post
+    function axiosPost(job) {
+        const Url='/dishes';
+
+        axios.post(Url,job)
+        .then(function(response) {
+            // console.log(response.data);
+            console.log("axiosPost: response.data = \n" + JSON.stringify(response.data));
+            $("#log").val(response.data.log);
+            $("#err").val(response.data.err);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+    }
+    
+    // copia i valori dei parametri
+    // dal Form a currentJob
+    function setParametri(job) {
+        var j=0;
+        var ele, label; 
+
+        job.rep_dir = $("#job_dir").val();
+        job.rep_obj = $("#job_name").val();
+        // console.log('$("#job_dir").val()' + $("#job_dir").val());
+
+        if (job.pdi_par) {
+            for (var k in job.pdi_par) {
+                ele = $("#P"+j);
+                console.log(' setParametri(job): ' + k + '=' + ele.val()); 
+                job.pdi_par[k] = ele.val();
+                j++;                
+            };
+        }
+    }
+
+    </script>
+</html>
