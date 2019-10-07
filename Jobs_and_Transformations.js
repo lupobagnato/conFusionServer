@@ -117,6 +117,30 @@
       rep_obj: 'Produzione_mdb_loader',
       rep_usr: 'admin',
       rep_pwd: 'admin'
+    },
+
+    {
+      id: 103,
+      name: 'UVMO Loader',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'UVMO',
+      rep_obj: 'UVMO Loader',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    },
+    {
+      id: 104,
+      name: 'Extract XLS UVMO',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'UVMO',
+      rep_obj: 'Extract XLS UVMO',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {anno:'20YY',mese:'MM'}
     }
     
 
