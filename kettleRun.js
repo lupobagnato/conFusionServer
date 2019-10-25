@@ -20,10 +20,13 @@ function kettleRun(req, callback){
     
     const lista_parametri = req.body.pdi_par
 
+    const log_level ='-level=Basic';
+    // Basic, Detailed, Debug, Rowlevel, Error, Nothing
+
     let run_log = '';
     let err_log = '';
 
-    let kettle_call = [rep_name, rep_dir, rep_obj, rep_usr, rep_pwd];
+    let kettle_call = [rep_name, rep_dir, rep_obj, rep_usr, rep_pwd, log_level];
 
     for (var k in lista_parametri) {
         pp = ' -param='+k+'='+lista_parametri[k]

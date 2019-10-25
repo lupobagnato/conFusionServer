@@ -141,7 +141,124 @@
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {anno:'20YY',mese:'MM'}
+    },
+    {
+      id: 105,
+      name: 'Extract XLS Lavanolo',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Vari/Lavanolo',
+      rep_obj: 'Extract XLS Lavanolo',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {anno:'20YY',mese:'MM'}
+    },
+    {
+      id: 106,
+      name: 'LP Loader',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'record_SeT/LP',
+      rep_obj: 'LP Loader',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {INPUT_PATH:'/mnt/minollo/record_SeT_LP'}
+    },
+    {
+      id: 107,
+      name: 'Export SeT',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'record_SeT/export',
+      rep_obj: 'Export_SeT_loop',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {BACK_MONTHS:1,
+                ANNO_INIZIO:'20YY', ANNO_FINE:'20YY', MESE_INIZIO:'MM', MESE_FINE:'MM',
+                DESTINATARIO:'',
+                EXPORT_DIR:'/mnt/minollo/output_SeT'}
+    },
+    {
+      id: 108,
+      name: 'HSP23F_fast',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'HSP23F_fast',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+    {
+      id: 109,
+      name: 'HSP22b_file',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP22b_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM',
+                nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 110,
+      name: 'HSP22b_conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP22b_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM'}
+    },
+    {
+      id: 111,
+      name: 'HSP24 tutti',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'Esegui_HSP24_tutti',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM',
+                nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 112,
+      name: 'HSP24 conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'Conferma_HSP24_tutti',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM'}
+    },
+
+    {
+      id: 199,
+      name: 'Extract SGP',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'record_SeT/LP/SGP',
+      rep_obj: 'Extract_SGP_loop',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {BACK_MONTHS:1,
+                ANNO_INIZIO:'20YY', ANNO_FINE:'20YY', MESE_INIZIO:'MM', MESE_FINE:'MM',
+                EXPORT_DIR:'/mnt/minollo/record_SeT_LP'}
     }
+    
     
 
   ];
