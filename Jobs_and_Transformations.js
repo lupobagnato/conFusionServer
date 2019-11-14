@@ -243,6 +243,31 @@
       rep_pwd: 'admin',
       pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM'}
     },
+    {
+      id: 113,
+      name: 'Crea FileW',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'CUP',
+      rep_obj: 'Crea FileW',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {output_dir:'/mnt/minollo', yyyymm:'000000'}
+    },
+    {
+      id: 114,
+      name: 'PL Mensile',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'PL_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {output_dir:'/mnt/minollo', yyyymm:'000000'}
+    },
+
 
     {
       id: 199,
