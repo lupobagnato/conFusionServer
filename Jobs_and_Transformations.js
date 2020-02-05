@@ -12,15 +12,17 @@
       rep_pwd: 'admin',
       pdi_par: {anno:'2019', chk:'', back:3},
       controls: {anno:{placeholder:'YYYY'}, chk:{type:'checkbox'}}
+      // l'idea del placeholder sarebbe la scrittina in grigio visualizzata
+      // nel controllo, ma senza valorizzare il campo
     },
     {
       id: 1,
-      name: 'Test1 (2020-01)',
+      name: 'Lista Esiti x Data (x 730)',
       cmd: './pan.sh',
       working_dir: '/home/kettle/pdi/data-integration',
       rep_name: 'pdi_file_rep',
-      rep_dir: 'testBI',
-      rep_obj: 'test Transf',
+      rep_dir: '730_precompilato/web_services',
+      rep_obj: 'Lista Esiti x Data',
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {anno:'2020',mese:'01'}
@@ -250,7 +252,7 @@
       working_dir: '/home/kettle/pdi/data-integration',
       rep_name: 'pdi_file_rep',
       rep_dir: 'CUP',
-      rep_obj: 'Crea FileW',
+      rep_obj: 'Crea Filew',
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {output_dir:'/mnt/minollo', yyyymm:'000000'}
@@ -265,9 +267,109 @@
       rep_obj: 'PL_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {output_dir:'/mnt/minollo', yyyymm:'000000'}
+      pdi_par: {BACK_MONTHS:1,
+                nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 115,
+      name: 'Vertica vib_spec_esterni',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Vertica',
+      rep_obj: 'load_Vib_Spec_Esterni',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    },
+    {
+      id: 116,
+      name: 'STS21_file',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'STS21_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', 
+                nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 117,
+      name: 'STS21_conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'STS21_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY'}
     },
 
+    {
+      id: 118,
+      name: 'STS24F_file',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS24F_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', 
+                path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+    {
+      id: 119,
+      name: 'STS24F_conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS24F_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY'}
+    },
+    {
+      id: 120,
+      name: 'STS24G_file',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS24G_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY', 
+                path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+    {
+      id: 121,
+      name: 'STS24G_conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS24G_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'20YY'}
+    },    
+    {
+      id: 122,
+      name: 'PL Annuale',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'PL_Anno_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'0000',
+                nsis_out:'/mnt/minollo/NSIS_out'}
+    },
 
     {
       id: 199,
