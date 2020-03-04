@@ -25,7 +25,7 @@
       rep_obj: 'Lista Esiti x Data',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {anno:'2020',mese:'01'}
+      pdi_par: {BackDays:'0'}
     },
     {
       id: 2,
@@ -142,7 +142,7 @@
       rep_obj: 'Extract XLS UVMO',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {anno:'20YY',mese:'MM'}
+      pdi_par: {anno:'202Y',mese:'MM'}
     },
     {
       id: 105,
@@ -154,7 +154,7 @@
       rep_obj: 'Extract XLS Lavanolo',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {anno:'20YY',mese:'MM'}
+      pdi_par: {anno:'202Y',mese:'MM'}
     },
     {
       id: 106,
@@ -179,7 +179,7 @@
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {BACK_MONTHS:1,
-                ANNO_INIZIO:'20YY', ANNO_FINE:'20YY', MESE_INIZIO:'MM', MESE_FINE:'MM',
+                ANNO_INIZIO:'202Y', ANNO_FINE:'202Y', MESE_INIZIO:'MM', MESE_FINE:'MM',
                 DESTINATARIO:'',
                 EXPORT_DIR:'/mnt/minollo/output_SeT'}
     },
@@ -205,7 +205,7 @@
       rep_obj: 'HSP22b_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
                 nsis_out:'/mnt/minollo/NSIS_out'}
     },
     {
@@ -218,7 +218,7 @@
       rep_obj: 'HSP22b_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM'}
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
     },
     {
       id: 111,
@@ -230,7 +230,7 @@
       rep_obj: 'Esegui_HSP24_tutti',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
                 nsis_out:'/mnt/minollo/NSIS_out'}
     },
     {
@@ -243,7 +243,7 @@
       rep_obj: 'Conferma_HSP24_tutti',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', s_MM:'MM', e_MM:'MM'}
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
     },
     {
       id: 113,
@@ -291,7 +291,7 @@
       rep_obj: 'STS21_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', 
+      pdi_par: {YYYY:'202Y', 
                 nsis_out:'/mnt/minollo/NSIS_out'}
     },
     {
@@ -304,7 +304,7 @@
       rep_obj: 'STS21_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY'}
+      pdi_par: {YYYY:'202Y'}
     },
 
     {
@@ -317,7 +317,7 @@
       rep_obj: 'STS24F_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', 
+      pdi_par: {YYYY:'202Y', 
                 path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
@@ -330,7 +330,7 @@
       rep_obj: 'STS24F_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY'}
+      pdi_par: {YYYY:'202Y'}
     },
     {
       id: 120,
@@ -342,7 +342,7 @@
       rep_obj: 'STS24G_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY', 
+      pdi_par: {YYYY:'202Y', 
                 path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
@@ -355,7 +355,7 @@
       rep_obj: 'STS24G_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'20YY'}
+      pdi_par: {YYYY:'202Y'}
     },    
     {
       id: 122,
@@ -372,6 +372,87 @@
     },
 
     {
+      id: 123,
+      name: 'Get Esiti 730',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Get Esiti',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {protocollo:'x',
+                ric_path:'/mnt/minollo/730/ricevute'}
+    },
+    {
+      id: 124,
+      name: 'Import 730 (tutte le origini)',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Import 730',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+    {
+      id: 125,
+      name: 'Import 730 CUPSSN',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'import_cupssn',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+    {
+      id: 126,
+      name: 'Import 730 CUPEXTRA',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'import_cupextra',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+    {
+      id: 127,
+      name: 'Import 730 LPAMB',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'import_lpamb',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+
+		{
+      id: 128,
+      name: 'Export 730',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Export 730',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+
+
+    {
       id: 199,
       name: 'Extract SGP',
       cmd: './kitchen.sh',
@@ -382,7 +463,7 @@
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {BACK_MONTHS:1,
-                ANNO_INIZIO:'20YY', ANNO_FINE:'20YY', MESE_INIZIO:'MM', MESE_FINE:'MM',
+                ANNO_INIZIO:'202Y', ANNO_FINE:'202Y', MESE_INIZIO:'MM', MESE_FINE:'MM',
                 EXPORT_DIR:'/mnt/minollo/record_SeT_LP'}
     }
     
