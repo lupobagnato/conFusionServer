@@ -1,93 +1,6 @@
 
   const jobList = [
     {
-      id: 0,
-      name: 'Test0 (anno=2019 chk back=3)',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'testBI',
-      rep_obj: 'test Transf',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {anno:'2019', chk:'', back:3},
-      controls: {anno:{placeholder:'YYYY'}, chk:{type:'checkbox'}}
-      // l'idea del placeholder sarebbe la scrittina in grigio visualizzata
-      // nel controllo, ma senza valorizzare il campo
-    },
-    {
-      id: 1,
-      name: 'Lista Esiti x Data (x 730)',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: '730_precompilato/web_services',
-      rep_obj: 'Lista Esiti x Data',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {BackDays:'0'}
-    },
-    {
-      id: 2,
-      name: 'dbRep_PDI_7 - test Transf',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'dbRep_PDI_7',
-      rep_dir: 'testBI',
-      rep_obj: 'test Transf',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {anno:'2021',mese:'02', giorno:'03'}
-    } ,
-    {
-      id: 3,
-      name: 'dbRep_PDI_7 - test',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'dbRep_PDI_7',
-      rep_dir: 'testBI',
-      rep_obj: 'test',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    } ,
-
-    {
-      id: 4,
-      name: 'P4',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'Altro',
-      rep_obj: 'quattro',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    } ,
-    {
-      id: 5,
-      name: 'P5',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'Art50',
-      rep_obj: 'cinque',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    } ,
-
-    {
-      id: 10,
-      name: 'Proc 10 Param',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'testBI',
-      rep_obj: 'test Transf',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {zero:'ZERO', uno:'YYYY',due:'MM', tre:'DD', quattro:4, cinque:5, sei:'sei', sette:7, otto:8, nove:'9'}
-    } ,
-    // inizio procedure reali
-    {
       id: 100,
       name: 'TMA Import',
       cmd: './kitchen.sh',
@@ -155,6 +68,21 @@
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {anno:'202Y',mese:'MM'}
+    },
+
+    {
+      id: 199,
+      name: 'Extract SGP',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'record_SeT/LP/SGP',
+      rep_obj: 'Extract_SGP_loop',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {BACK_MONTHS:1,
+                ANNO_INIZIO:'202Y', ANNO_FINE:'202Y', MESE_INIZIO:'MM', MESE_FINE:'MM',
+                EXPORT_DIR:'/mnt/minollo/record_SeT_LP'}
     },
     {
       id: 106,
@@ -371,21 +299,10 @@
                 nsis_out:'/mnt/minollo/NSIS_out'}
     },
 
+    
+    // Gestione 730
     {
-      id: 123,
-      name: 'Get Esiti 730',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: '730_precompilato',
-      rep_obj: 'Get Esiti',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {protocollo:'x',
-                ric_path:'/mnt/minollo/730/ricevute'}
-    },
-    {
-      id: 124,
+      id: 200,
       name: 'Import 730 (tutte le origini)',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
@@ -398,7 +315,7 @@
                 e_YYYYMMDD:'202ymmdd o 202ymm'}
     },
     {
-      id: 125,
+      id: 201,
       name: 'Import 730 CUPSSN',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
@@ -411,7 +328,7 @@
                 e_YYYYMMDD:'202ymmdd o 202ymm'}
     },
     {
-      id: 126,
+      id: 202,
       name: 'Import 730 CUPEXTRA',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
@@ -424,7 +341,7 @@
                 e_YYYYMMDD:'202ymmdd o 202ymm'}
     },
     {
-      id: 127,
+      id: 203,
       name: 'Import 730 LPAMB',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
@@ -436,9 +353,8 @@
       pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
                 e_YYYYMMDD:'202ymmdd o 202ymm'}
     },
-
 		{
-      id: 128,
+      id: 204,
       name: 'Export 730',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
@@ -450,24 +366,147 @@
       pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
                 e_YYYYMMDD:'202ymmdd o 202ymm'}
     },
-
-
     {
-      id: 199,
-      name: 'Extract SGP',
+      id: 205,
+      name: 'Invio 730',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
       rep_name: 'pdi_file_rep',
-      rep_dir: 'record_SeT/LP/SGP',
-      rep_obj: 'Extract_SGP_loop',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Invio 730',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {BACK_MONTHS:1,
-                ANNO_INIZIO:'202Y', ANNO_FINE:'202Y', MESE_INIZIO:'MM', MESE_FINE:'MM',
-                EXPORT_DIR:'/mnt/minollo/record_SeT_LP'}
-    }
+      pdi_par: {protocollo:'x',
+                ric_path:'/mnt/minollo/730/ricevute'}
+    },
+    {
+      id: 206,
+      name: 'Lista Esiti x Data (x 730)',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato/web_services',
+      rep_obj: 'Lista Esiti x Data',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {BackDays:'0'}
+    },
+    {
+      id: 207,
+      name: 'Get Esiti 730',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Get Esiti',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {protocollo:'x',
+                ric_path:'/mnt/minollo/730/ricevute'}
+    },
+    {
+      id: 208,
+      name: 'Conferma 730',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Export 730',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+                e_YYYYMMDD:'202ymmdd o 202ymm'}
+    },
+
+// procedure di Test
+    {
+      id: 0,
+      name: '----- TEST -----',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'testBI',
+      rep_obj: 'test Transf',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {anno:'2019', chk:'', back:3},
+      controls: {anno:{placeholder:'YYYY'}, chk:{type:'checkbox'}}
+      // l'idea del placeholder sarebbe la scrittina in grigio visualizzata
+      // nel controllo (ad es. per visualizzare il formato), ma senza valorizzare il campo
+    },
+
+    {
+      id: 1,
+      name: 'Test0 (anno=2019 chk back=3)',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'testBI',
+      rep_obj: 'test Transf',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {anno:'2019', chk:'', back:3},
+    },
     
+    {
+      id: 2,
+      name: 'dbRep_PDI_7 - test Transf',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'dbRep_PDI_7',
+      rep_dir: 'testBI',
+      rep_obj: 'test Transf',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {anno:'2021',mese:'02', giorno:'03'}
+    } ,
+    {
+      id: 3,
+      name: 'dbRep_PDI_7 - test',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'dbRep_PDI_7',
+      rep_dir: 'testBI',
+      rep_obj: 'test',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    } ,
+    {
+      id: 4,
+      name: 'P4',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Altro',
+      rep_obj: 'quattro',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    } ,
+    {
+      id: 5,
+      name: 'P5',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Art50',
+      rep_obj: 'cinque',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    } ,
+    {
+      id: 10,
+      name: 'Proc 10 Param',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'testBI',
+      rep_obj: 'test Transf',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {zero:'ZERO', uno:'YYYY',due:'MM', tre:'DD', quattro:4, cinque:5, sei:'sei', sette:7, otto:8, nove:'9'}
+    } 
     
+
 
   ];
   module.exports = jobList;
