@@ -13,7 +13,7 @@ function kettleRun(req, callback){
     const rep_usr ='-user=' + req.body.rep_usr;
     const rep_pwd ='-pass=' + req.body.rep_pwd;
 
-    console.log('kettleRun: inizio');
+    console.log('deb-->kettleRun: inizio');
 
     if (cmd.includes('pan'))
         rep_obj ='-trans=' + req.body.rep_obj;
@@ -62,7 +62,7 @@ function kettleRun(req, callback){
             log: run_log,
             err: err_log
         };
-        console.log('kettleRun: fine, prima della callback');
+        console.log('deb-->kettleRun: fine, prima della callback');
         callback(messaggio);
 
     });  

@@ -47,7 +47,7 @@ dishRouter.route('/')
     //     'rep_usr: ' + req.body.rep_usr +'\n' +
     //     'rep_pwd: ' + req.body.rep_pwd ;
     
-    console.log("dishRouter.post");
+    console.log("deb-->dishRouter.post");
     console.log(req.body);
     
     kettleRun( req, (msg)=> { 
