@@ -183,7 +183,7 @@
       rep_obj: 'Crea Filew',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {output_dir:'/mnt/minollo', yyyymm:'000000'}
+      pdi_par: {output_dir:'/mnt/minollo', YYYYMM:'000000'}
     },
     {
       id: 114,
@@ -456,7 +456,7 @@
 
     
     // Gestione 730
-    /*
+    
     {
       id: 200,
       name: 'Import 730 (tutte le origini)',
@@ -532,8 +532,7 @@
       rep_obj: 'Invio 730',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {protocollo:'x',
-                ric_path:'/mnt/minollo/730/ricevute'}
+      pdi_par: {ric_path:'/mnt/minollo/730/ricevute'}
     },
     {
       id: 206,
@@ -573,7 +572,7 @@
       pdi_par: {protocollo:'x',
                 ric_path:'/mnt/minollo/730/ricevute'}
     },
-    */
+
 
     
 
