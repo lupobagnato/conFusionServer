@@ -323,8 +323,7 @@
       rep_obj: 'Export Ex_Ante',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YY:'20',
-                P:'3'}
+      pdi_par: {P:'2', YYYYMMDD_from:'2021-05-17', YYYYMMDD_to:'2021-05-21'}
     },
     
     // Art50
