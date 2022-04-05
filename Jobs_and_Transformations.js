@@ -11,28 +11,29 @@
       rep_usr: 'admin',
       rep_pwd: 'admin'
     },
-    {
-      id: 101,
-      name: 'EMONET Loader',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'Interni',
-      rep_obj: 'EMONET Loader',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    },
-    {
-      id: 102,
-      name: 'Produzione.mdb Loader',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'Interni',
-      rep_obj: 'Produzione_mdb_loader',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    },
+    
+    // {
+    //   id: 101,
+    //   name: 'EMONET Loader',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'Interni',
+    //   rep_obj: 'EMONET Loader',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin'
+    // },
+    // {
+    //   id: 102,
+    //   name: 'Produzione.mdb Loader',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'Interni',
+    //   rep_obj: 'Produzione_mdb_loader',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin'
+    // },
 
     {
       id: 103,
@@ -325,6 +326,19 @@
       rep_pwd: 'admin',
       pdi_par: {P:'2', YYYYMMDD_from:'2021-05-17', YYYYMMDD_to:'2021-05-21'}
     },
+
+    {
+      id: 125,
+      name: 'int_ETL_Loop',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Interni',
+      rep_obj: 'int_ETL_Loop',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYYMM_from:'202201', YYYYMM_to:'202202'}
+    },
     
     // Art50
     {
@@ -572,8 +586,29 @@
                 ric_path:'/mnt/minollo/730/ricevute'}
     },
 
-
-    
+// esecuzione manuale di procedure già in CrontabUI
+{
+  id: 301,
+  name: 'SDOePAC Loader',
+  cmd: './kitchen.sh',
+  working_dir: '/home/kettle/pdi/data-integration',
+  rep_name: 'pdi_file_rep',
+  rep_dir: 'SDOePAC/Loader',
+  rep_obj: 'SDOePAC Loader',
+  rep_usr: 'admin',
+  rep_pwd: 'admin'
+},
+{
+  id: 302,
+  name: 'Accessi Day Loader',
+  cmd: './kitchen.sh',
+  working_dir: '/home/kettle/pdi/data-integration',
+  rep_name: 'pdi_file_rep',
+  rep_dir: 'Ricoveri Patidok',
+  rep_obj: 'Accessi Day Loader',
+  rep_usr: 'admin',
+  rep_pwd: 'admin'
+},    
 
 // procedure di Test
     {
