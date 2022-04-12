@@ -70,25 +70,25 @@ function kettleRun(req, callback){
     //
     // 07.10.2020 
     // commentato per avere  meno righe in Console e capire il motivo dele doppie esecuzioni
-    //
-    // cmd_line.stdout.on('data', (data) => {
-    //     console.log('# blocco  Start#\n' + data.toString() + '\n# blocco End #\n') ;
-    //     run_log += data.toString();
-    // });  
+    // 12.04.2022 scommentato
+    cmd_line.stdout.on('data', (data) => {
+        console.log('# blocco  Start#\n' + data.toString() + '\n# blocco End #\n') ;
+        run_log += data.toString();
+    });  
     
-    // cmd_line.stderr.on('data', (data) => {
-    //     console.log('# ERR #\n' + data.toString() + '\n###### #\n') ;
-    //     err_log += data.toString();
-    // });  
+    cmd_line.stderr.on('data', (data) => {
+        console.log('# ERR #\n' + data.toString() + '\n###### #\n') ;
+        err_log += data.toString();
+    });  
     
      
-    // cmd_line.stdout.on('end', (data) => {
-    //     let messaggio = {
-    //         log: run_log,
-    //         err: err_log
-    //     };
-    //     callback(messaggio);
-    // }); 
+    cmd_line.stdout.on('end', (data) => {
+        let messaggio = {
+            log: run_log,
+            err: err_log
+        };
+        callback(messaggio);
+    }); 
     
   
 }  
