@@ -125,6 +125,33 @@
       pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
+      id: 126,
+      name: 'HSP14_fast',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'HSP14_fast',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+    {
+      id: 127,
+      name: 'STS14_fast',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS14_fast',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+
+    
+
+    {
       id: 109,
       name: 'HSP22b_file',
       cmd: './kitchen.sh',
