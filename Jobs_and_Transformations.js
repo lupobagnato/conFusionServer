@@ -455,7 +455,7 @@
       rep_obj: 'mef_Export_xml',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {ROOTPATH:'/mnt/minollo', XML_NAME:'OUTnn'}
+      pdi_par: {ROOTPATH:'/mnt/minollo', XML_NAME:'OUT01'}
     },
     {
       id: 158,
@@ -635,6 +635,18 @@
   rep_obj: 'Accessi Day Loader',
   rep_usr: 'admin',
   rep_pwd: 'admin'
+},    
+{
+  id: 303,
+  name: 'Accessi_PS Loader',
+  cmd: './kitchen.sh',
+  working_dir: '/home/kettle/pdi/data-integration',
+  rep_name: 'pdi_file_rep',
+  rep_dir: 'Pronto_Soccorso',
+  rep_obj: 'Accessi_PS Loader',
+  rep_usr: 'admin',
+  rep_pwd: 'admin',
+  pdi_par: {BACK_DAYS:'3'},
 },    
 
 // procedure di Test
