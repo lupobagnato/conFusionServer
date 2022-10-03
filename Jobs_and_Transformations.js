@@ -110,7 +110,7 @@
       pdi_par: {BACK_MONTHS:3,
                 ANNO_INIZIO:'202Y', ANNO_FINE:'202Y', MESE_INIZIO:'MM', MESE_FINE:'MM',
                 DESTINATARIO:'',
-                EXPORT_DIR:'/mnt/minollo/output_SeT'}
+                EXPORT_DIR:'/mnt/minollo/record_SeT_OUT'}
     },
     {
       id: 108,
@@ -576,12 +576,12 @@
     },
     {
       id: 206,
-      name: 'Lista Esiti x Data (x 730)',
-      cmd: './pan.sh',
+      name: 'Lista Esiti',
+      cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
       rep_name: 'pdi_file_rep',
-      rep_dir: '730_precompilato/web_services',
-      rep_obj: 'Lista Esiti x Data',
+      rep_dir: '730_precompilato',
+      rep_obj: 'Lista Esiti',
       rep_usr: 'admin',
       rep_pwd: 'admin',
       pdi_par: {BackDays:'0'}
@@ -611,6 +611,18 @@
       rep_pwd: 'admin',
       pdi_par: {protocollo:'x',
                 ric_path:'/mnt/minollo/730/ricevute'}
+    },
+    {
+      id: 210,
+      name: 'Lista Esiti x Data (x 730)',
+      cmd: './pan.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: '730_precompilato/web_services',
+      rep_obj: 'Lista Esiti x Data',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {BackDays:'0'}
     },
 
 // esecuzione manuale di procedure già in CrontabUI
