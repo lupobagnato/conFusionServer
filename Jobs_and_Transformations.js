@@ -366,6 +366,31 @@
       rep_pwd: 'admin',
       pdi_par: {YYYYMM_from:'202201', YYYYMM_to:'202202'}
     },
+    {
+      id: 128,
+      name: 'STS11_file',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS11_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'2022', 
+                path_nsis:'/mnt/minollo/Input/NSIS'}
+    },
+    {
+      id: 129,
+      name: 'STS11_conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS/Fast',
+      rep_obj: 'STS11_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'2022'}
+    },
     
     // Art50
     {
