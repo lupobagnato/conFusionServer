@@ -12,28 +12,28 @@
       rep_pwd: 'admin'
     },
     
-    // {
-    //   id: 101,
-    //   name: 'EMONET Loader',
-    //   cmd: './kitchen.sh',
-    //   working_dir: '/home/kettle/pdi/data-integration',
-    //   rep_name: 'pdi_file_rep',
-    //   rep_dir: 'Interni',
-    //   rep_obj: 'EMONET Loader',
-    //   rep_usr: 'admin',
-    //   rep_pwd: 'admin'
-    // },
-    // {
-    //   id: 102,
-    //   name: 'Produzione.mdb Loader',
-    //   cmd: './kitchen.sh',
-    //   working_dir: '/home/kettle/pdi/data-integration',
-    //   rep_name: 'pdi_file_rep',
-    //   rep_dir: 'Interni',
-    //   rep_obj: 'Produzione_mdb_loader',
-    //   rep_usr: 'admin',
-    //   rep_pwd: 'admin'
-    // },
+    {
+      id: 101,
+      name: 'Extract XLS Farma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Vari/Farma_XLS',
+      rep_obj: 'Extract XLS Farma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    },
+    {
+      id: 102,
+      name: 'Extract XLS Accessi PS paganti',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'Pronto_Soccorso',
+      rep_obj: 'Extract XLS Accessi PS paganti',
+      rep_usr: 'admin',
+      rep_pwd: 'admin'
+    },
 
     {
       id: 103,
@@ -364,7 +364,7 @@
       rep_obj: 'int_ETL_Loop',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYYMM_from:'202201', YYYYMM_to:'202202'}
+      pdi_par: {YYYYMM_from:'202301', YYYYMM_to:'202302'}
     },
     {
       id: 128,
@@ -376,7 +376,7 @@
       rep_obj: 'STS11_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'2022', 
+      pdi_par: {YYYY:'2023', 
                 path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
@@ -389,7 +389,7 @@
       rep_obj: 'STS11_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'2022'}
+      pdi_par: {YYYY:'2023'}
     },
     
     // Art50
