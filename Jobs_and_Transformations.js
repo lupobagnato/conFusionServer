@@ -134,7 +134,7 @@
       rep_obj: 'HSP14_fast',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+      pdi_par: {YYYY:'202Y',path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
       id: 127,
@@ -364,7 +364,7 @@
       rep_obj: 'int_ETL_Loop',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYYMM_from:'202301', YYYYMM_to:'202302'}
+      pdi_par: {YYYYMM_from:'202YMM', YYYYMM_to:'202YMM'}
     },
     {
       id: 128,
@@ -376,7 +376,7 @@
       rep_obj: 'STS11_file',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'2023', 
+      pdi_par: {YYYY:'2024', 
                 path_nsis:'/mnt/minollo/Input/NSIS'}
     },
     {
@@ -389,8 +389,61 @@
       rep_obj: 'STS11_conferma',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {YYYY:'2023'}
+      pdi_par: {YYYY:'2024'}
     },
+
+    {
+      id: 130,
+      name: 'HSP24 Fps',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP24_Fps_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
+                nsis_in:'/mnt/minollo/Input/NSIS', nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 131,
+      name: 'HSP24 Fps conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP24_Fps_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
+    },
+
+    {
+      id: 132,
+      name: 'HSP24 Gso',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP24_Gso_file',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
+                nsis_in:'/mnt/minollo/Input/NSIS',nsis_out:'/mnt/minollo/NSIS_out'}
+    },
+    {
+      id: 133,
+      name: 'HSP24 Gso conferma',
+      cmd: './kitchen.sh',
+      working_dir: '/home/kettle/pdi/data-integration',
+      rep_name: 'pdi_file_rep',
+      rep_dir: 'NSIS',
+      rep_obj: 'HSP24_Gso_conferma',
+      rep_usr: 'admin',
+      rep_pwd: 'admin',
+      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
+    },
+
     
     // Art50
     {
@@ -672,9 +725,22 @@
   rep_obj: 'Accessi Day Loader',
   rep_usr: 'admin',
   rep_pwd: 'admin'
-},    
+},
+
 {
   id: 303,
+  name: 'Ricoveri Loader',
+  cmd: './kitchen.sh',
+  working_dir: '/home/kettle/pdi/data-integration',
+  rep_name: 'pdi_file_rep',
+  rep_dir: 'Ricoveri Patidok',
+  rep_obj: 'Ricoveri Loader',
+  rep_usr: 'admin',
+  rep_pwd: 'admin'
+},
+
+{
+  id: 304,
   name: 'Accessi_PS Loader',
   cmd: './kitchen.sh',
   working_dir: '/home/kettle/pdi/data-integration',
@@ -685,6 +751,19 @@
   rep_pwd: 'admin',
   pdi_par: {BACK_DAYS:'3'},
 },    
+
+{
+  id: 305,
+  name: 'sync_CUP',
+  cmd: './kitchen.sh',
+  working_dir: '/home/kettle/pdi/data-integration',
+  rep_name: 'pdi_file_rep',
+  rep_dir: 'CUP/sync_CUP',
+  rep_obj: 'sync_CUP',
+  rep_usr: 'admin',
+  rep_pwd: 'admin',
+},
+
 
 // procedure di Test
     {
