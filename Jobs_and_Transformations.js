@@ -1,16 +1,16 @@
 
   const jobList = [
-    {
-      id: 100,
-      name: 'TMA Import',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'CUP/TMA',
-      rep_obj: 'TMA_import',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    },
+    // {
+    //   id: 100,
+    //   name: 'TMA Import',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'CUP/TMA',
+    //   rep_obj: 'TMA_import',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin'
+    // },
     
     {
       id: 101,
@@ -73,7 +73,7 @@
 
     {
       id: 199,
-      name: 'Extract SGP',
+      name: 'Extract WPS (a.k.a exSGP)',
       cmd: './kitchen.sh',
       working_dir: '/home/kettle/pdi/data-integration',
       rep_name: 'pdi_file_rep',
@@ -112,18 +112,18 @@
                 DESTINATARIO:'',
                 EXPORT_DIR:'/mnt/minollo/record_SeT_OUT'}
     },
-    {
-      id: 108,
-      name: 'HSP23F_fast',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'NSIS/Fast',
-      rep_obj: 'HSP23F_fast',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
-    },
+    // {
+    //   id: 108,
+    //   name: 'HSP23F_fast',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'NSIS/Fast',
+    //   rep_obj: 'HSP23F_fast',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin',
+    //   pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+    // },
     {
       id: 126,
       name: 'HSP14_fast',
@@ -146,7 +146,7 @@
       rep_obj: 'STS14_fast',
       rep_usr: 'admin',
       rep_pwd: 'admin',
-      pdi_par: {path_nsis:'/mnt/minollo/Input/NSIS'}
+      pdi_par: {YYYY:'202Y',path_nsis:'/mnt/minollo/Input/NSIS'}
     },
 
     
@@ -176,31 +176,31 @@
       rep_pwd: 'admin',
       pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
     },
-    {
-      id: 111,
-      name: 'HSP24 tutti',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'NSIS',
-      rep_obj: 'Esegui_HSP24_tutti',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
-                nsis_out:'/mnt/minollo/NSIS_out'}
-    },
-    {
-      id: 112,
-      name: 'HSP24 conferma',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'NSIS',
-      rep_obj: 'Conferma_HSP24_tutti',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
-    },
+    // {
+    //   id: 111,
+    //   name: 'HSP24 tutti',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'NSIS',
+    //   rep_obj: 'Esegui_HSP24_tutti',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin',
+    //   pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM',
+    //             nsis_out:'/mnt/minollo/NSIS_out'}
+    // },
+    // {
+    //   id: 112,
+    //   name: 'HSP24 conferma',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'NSIS',
+    //   rep_obj: 'Conferma_HSP24_tutti',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin',
+    //   pdi_par: {YYYY:'202Y', s_MM:'MM', e_MM:'MM'}
+    // },
     {
       id: 113,
       name: 'Crea FileW',
@@ -226,17 +226,17 @@
       pdi_par: {BACK_MONTHS:1,
                 nsis_out:'/mnt/minollo/NSIS_out'}
     },
-    {
-      id: 115,
-      name: 'Vertica vib_spec_esterni',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: 'Vertica',
-      rep_obj: 'load_Vib_Spec_Esterni',
-      rep_usr: 'admin',
-      rep_pwd: 'admin'
-    },
+    // {
+    //   id: 115,
+    //   name: 'Vertica vib_spec_esterni',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: 'Vertica',
+    //   rep_obj: 'load_Vib_Spec_Esterni',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin'
+    // },
     {
       id: 116,
       name: 'STS21_file',
@@ -575,19 +575,19 @@
     
     // Gestione 730
     
-    {
-      id: 200,
-      name: 'Import 730 (tutte le origini)',
-      cmd: './kitchen.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: '730_precompilato',
-      rep_obj: 'Import 730',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
-                e_YYYYMMDD:'202ymmdd o 202ymm'}
-    },
+    // {
+    //   id: 200,
+    //   name: 'Import 730 (tutte le origini)',
+    //   cmd: './kitchen.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: '730_precompilato',
+    //   rep_obj: 'Import 730',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin',
+    //   pdi_par: {s_YYYYMMDD:'202ymmdd o 202ymm',
+    //             e_YYYYMMDD:'202ymmdd o 202ymm'}
+    // },
     {
       id: 201,
       name: 'Import 730 CUPSSN',
@@ -690,18 +690,18 @@
       pdi_par: {protocollo:'x',
                 ric_path:'/mnt/minollo/730/ricevute'}
     },
-    {
-      id: 210,
-      name: 'Lista Esiti x Data (x 730)',
-      cmd: './pan.sh',
-      working_dir: '/home/kettle/pdi/data-integration',
-      rep_name: 'pdi_file_rep',
-      rep_dir: '730_precompilato/web_services',
-      rep_obj: 'Lista Esiti x Data',
-      rep_usr: 'admin',
-      rep_pwd: 'admin',
-      pdi_par: {BackDays:'0'}
-    },
+    // {
+    //   id: 210,
+    //   name: 'Lista Esiti x Data (x 730)',
+    //   cmd: './pan.sh',
+    //   working_dir: '/home/kettle/pdi/data-integration',
+    //   rep_name: 'pdi_file_rep',
+    //   rep_dir: '730_precompilato/web_services',
+    //   rep_obj: 'Lista Esiti x Data',
+    //   rep_usr: 'admin',
+    //   rep_pwd: 'admin',
+    //   pdi_par: {BackDays:'0'}
+    // },
 
 // esecuzione manuale di procedure già in CrontabUI
 {
